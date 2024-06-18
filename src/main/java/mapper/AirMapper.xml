@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 항공사 관련 매퍼 -->
+<mapper namespace="air">
+
+	<!-- 축제 리스트 전체 가져오기 -->
+	
+	<!-- 출발 공항 리스트 -->
+	<select id="getDepartureAirportListAll" resultType="String">
+		select distinct depairportname name from airinfo
+		where depcountry='대한민국' and depairportname like '%국제%'
+		order by depairportname asc
+	</select>
+	
+	<!-- 도착 공항 리스트 -->
+	<select id="getArrivalAirportListAll" parameterType="Map" resultType="String">
+		select distinct arrairportname name from airinfo
+		where arrcountry=#{country} and depairportname = #{depAir}
+		order by arrairportname asc
+	</select>
+		
+	<!-- 항공권 리스트 -->
+	<select id="getAirInfoList" parameterType="Map" resultType="AirInfo">
+		select * from airinfo
+		where depairportname = #{depAir} 
+		and arrairportname = #{arrAir}
+		and day = #{day}
+	</select>
+		
+	
+</mapper>
+
+
+
+

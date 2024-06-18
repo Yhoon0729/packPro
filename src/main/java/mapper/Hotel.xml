@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="xml.hotel">
+
+	<resultMap type="hotel" id="hotelMap">
+		<result column="htl_id" property="htlId"/>
+		<result column="fst_loc" property="fstLoc" />
+		<result column="htl_name" property="htlName" />
+		<result column="htl_grade" property="htlGrade" />
+		<result column="htl_price" property="htlPrice" />
+	</resultMap>
+	
+	<resultMap type="hotelbooking" id="htlBookingMap">
+		<result column="htl_id" property="htlId"/>
+		<result column="htl_checkin" property="htlCheckin" />
+		<result column="htl_checkout" property="htlCheckout" />
+		<result column="htl_adoult" property="htlAdult" />
+		<result column="htl_child" property="htlChild" />
+		<result column="htl_rooms" property="htlRooms" />
+		<result column="htl_totalprice" property="htlTotalprice" />
+	</resultMap>
+
+	<select id="hotelList" resultType="hotel" resultMap="hotelMap">
+		select * from hotel_info
+	</select>
+	
+	<select id="hotellocList" resultType="hotel" resultMap="hotelMap">
+		select distinct fst_loc from hotel_info
+	</select>
+	
+	<insert id="hotelBookingInsert" parameterType="int">
+		insert into hotel_info values (hotelbookingseq.nextval, 'userid', #{htlId}, #{htlCheckin}, #{htlCheckout}, #{htlAdult}, #{htlChild}, #{htlRooms}, #{htlTotalprice})
+	</insert>
+	
+	<select id="getHotelBooking" parameterType="int" resultType="hotelbooking" resultMap="htlBookingMap">
+		select * from hotel_booking where htl_bookingid = #{htlBookingid}
+	</select>
+	
+	<select id="getHotelPrice" parameterType="int" resultType="int">
+        select htl_price from hotel_info where htl_id = #{htlId}
+    </select>
+</mapper>

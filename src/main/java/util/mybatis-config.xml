@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+		<setting name="jdbcTypeForNull" value="NULL" />
+		<!-- <setting name="mapUnderscoreToCamelCase" value="true" /> -->
+	</settings>
+	<typeAliases>
+		<!-- 절대 경로 (src 기준) 롤 alias 지정, mouse 를 올리면 변화가 생겨야 정상 mapper 에서 paramterType, 
+			resultType 지정시 경로를 모두 사용하지 않고 alias 를 사용하여 표현하게 해준다. -->
+		<!-- 축제 관련 -->
+		<typeAlias type="model.Festival" alias="Festival" />
+		<typeAlias type="model.FestivalInfo" alias="FestivalInfo" />
+
+		<!-- 항공편 관련 -->
+		<typeAlias type="model.Airport" alias="Airport" />
+		<typeAlias type="model.AirInfo" alias="AirInfo" />
+
+		<!-- 호텔 관련 -->
+		<typeAlias type="model.Hotel" alias="hotel" />
+		<typeAlias type="model.HotelBooking" alias="hotelbooking" />
+
+	</typeAliases>
+
+	<environments default="oracle">
+		<environment id="oracle">
+			<transactionManager type="JDBC" />
+
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.OracleDriver" />
+				<property name="url"
+					value="jdbc:oracle:thin:@localhost:1521:xe" />
+				<property name="username" value="kic24" />
+				<property name="password" value="1234" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<!-- 축제관련 매퍼 -->
+		<mapper resource="mapper/Festival.xml" />
+
+		<!-- 항공사관련 매퍼 -->
+		<mapper resource="mapper/AirMapper.xml" />
+		
+		<!-- 호텔 관련 매퍼 -->
+		<mapper resource="mapper/Hotel.xml"/>
+
+		<!-- 렌트카 관련 매퍼 -->
+		<mapper class="mapper.RentAnno" />
+	</mappers>
+</configuration>
