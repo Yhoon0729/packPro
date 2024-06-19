@@ -27,7 +27,7 @@
 
 	<form action="/packagePro/air/airindex?code=${list.code }" method="post">
 	
-		<h1>축제 상세 정보</h1>
+		<h1>축제 상세 정보$()</h1>
 	
 		<table>
 		

@@ -22,6 +22,9 @@
 		<!-- 호텔 관련 -->
 		<typeAlias type="model.Hotel" alias="hotel" />
 		<typeAlias type="model.HotelBooking" alias="hotelbooking" />
+		
+		<!-- 액티비티 관련 -->
+		<typeAlias type="model.TravelActivity" alias="travelActivity"/>
 
 	</typeAliases>
 
@@ -51,5 +54,11 @@
 
 		<!-- 렌트카 관련 매퍼 -->
 		<mapper class="mapper.RentAnno" />
+		
+		<!-- 액티비티 관련 매퍼 -->
+		<mapper resource="mapper/TravelActivityMapper.xml"/>
+		
+		<!-- 예약 관련 매퍼 -->
+		<mapper class="mapper.BookingAnno" />
 	</mappers>
 </configuration>

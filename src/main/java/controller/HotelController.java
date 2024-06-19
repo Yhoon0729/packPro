@@ -49,6 +49,7 @@ public class HotelController extends MskimRequestMapping {
         int rooms = Integer.parseInt(request.getParameter("rooms"));
 
         HotelBooking booking = new HotelBooking();
+        booking.setHtlBookingid(100);
         booking.setHtlId(hotelId);
         booking.setHtlCheckin(checkinDate);
         booking.setHtlCheckout(checkoutDate);
@@ -59,7 +60,7 @@ public class HotelController extends MskimRequestMapping {
 
         session.setAttribute("booking", booking);
 
-        System.out.println(booking);
+        System.out.println("세션 호텔 예약 " + booking);
         return "/view/hotel/hotelBooking.jsp";
     }
 }

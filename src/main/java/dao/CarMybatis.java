@@ -38,8 +38,8 @@ public class CarMybatis {
 		return num;
 	}
 	
-	public List<CarHis> rent(int car_id) {
-		List<CarHis> rent = session.getMapper(RentAnno.class).rent(car_id);
+	public CarHis rent(int car_id) {
+		CarHis rent = session.getMapper(RentAnno.class).rent(car_id);
 		return rent;
 	}
 	

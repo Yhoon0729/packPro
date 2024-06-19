@@ -19,8 +19,9 @@ public interface RentAnno {
 	@Insert("insert into car_rental_history values(car_his.nextval, #{car_id}, #{totFee}, #{sDay}, #{eDay})")
 	public int carHis(Map map);
 	
+	
 	@Select("select * from car_rental_history where car_id = #{car_id}")
-	List<CarHis> rent(int car_id);
+	CarHis rent(int car_id);
 	
 	@Select("select car_history_id, car_id,"
 			+ "	to_char(car_start_date, 'yyyy-mm-dd hh24:mi') sDay,"

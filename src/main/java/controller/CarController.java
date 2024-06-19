@@ -82,12 +82,11 @@ public class CarController extends MskimRequestMapping{
         
         int hourFee = dao.fee(car_id);
         int totFee = (int)(tot_time * hourFee);
-        
         int num = dao.carHis(car_id, totFee, sDay, eDay);
         
-        List<CarHis> rent = dao.rent(car_id);
-        session.setAttribute("rent", rent);
-        System.out.println(session.getAttribute("rent"));
+        CarHis carHis = dao.rent(car_id);
+        session.setAttribute("carHis", carHis);
+        System.out.println(session.getAttribute("carHis"));
 
         request.setAttribute("car_id", car_id);
         request.setAttribute("sRentDate", sRentDate);
@@ -108,7 +107,7 @@ public class CarController extends MskimRequestMapping{
 		List<CarHis> li = dao.rentCarList();
 		request.setAttribute("li", li);
 		System.out.println(li);
-		
+
 		return "/view/car/rentCarList.jsp";
 	}
 }

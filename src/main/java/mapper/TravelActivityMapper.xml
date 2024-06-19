@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xml.travelActivity">
+
+<resultMap type="travelActivity" id="activityMap">
+		<result column="country_code" property="countryCode"/>
+		<result column="activity_title" property="activityTitle" />
+		<result column="activity_description" property="activityDescription" />
+</resultMap>
+	
+    <!-- 모든 액티비티 목록 조회 -->
+    <select id="selectTravelActivityList" resultType="travelActivity" resultMap="activityMap">
+        SELECT * FROM TravelActivity
+        			  
+    </select>
+  
+  <!--  특정 액티비티 목록 조회 -->
+ <select id="selectTravelActivityById" parameterType="Long" resultType="travelActivity" resultMap="activityMap">
+    SELECT * FROM travelactivity WHERE id = #{id}
+</select>
+
+</mapper>
