@@ -66,6 +66,7 @@ public class FestivalController extends MskimRequestMapping {
 		// parameter 처리
 		String festivalCode = request.getParameter("code");
 		request.setAttribute("festivalCode", festivalCode);
+		System.out.println("festivalCode" + festivalCode);
 		
 		// 페스티벌 정보 가져오기
 	
