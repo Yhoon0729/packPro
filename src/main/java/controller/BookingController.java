@@ -42,13 +42,13 @@ public class BookingController extends MskimRequestMapping {
 		int htl_bookingid = htlBooking.getHtlBookingid();
 		
 		CarHis carHis = (CarHis) session.getAttribute("carHis");
-		int car_id = carHis.getCar_id();
-		int car_history_id = carHis.getCar_history_id();
+		int carId = carHis.getCarId();
+		int carHistoryId = carHis.getCarHistoryId();
 		
 		TravelActivity activity = (TravelActivity) session.getAttribute("activity");
-		int act_id = activity.getId();
+		int act_id = activity.getId();   
 		
-		int booking = dao.booking(act_id, fst_code, htl_bookingid, car_history_id, car_id, htl_id);
+		int booking = dao.booking(act_id, fst_code, htl_bookingid, carHistoryId, carId, htl_id);
         return "/view/booking/confirm.jsp";
 	}
 	

@@ -13,19 +13,19 @@ public interface RentAnno {
 	@Select("select *  from car_rental_car1")
 	List<Car> getCars1();
 	
-	@Select("select car_daily_fee fee from car_rental_car1 where car_id = #{car_id}")
-	public int fee(int car_id);
+	@Select("select carDailyFee fee from car_rental_car1 where carId = #{carId}")
+	public int fee(int carId);
 	
-	@Insert("insert into car_rental_history values(car_his.nextval, #{car_id}, #{totFee}, #{sDay}, #{eDay})")
+	@Insert("insert into car_rental_history values(car_his.nextval, #{carId}, #{totFee}, #{carStartDate}, #{carEndDate})")
 	public int carHis(Map map);
 	
 	
-	@Select("select * from car_rental_history where car_id = #{car_id}")
+	@Select("select * from car_rental_history where carId = #{carId}")
 	CarHis rent(int car_id);
 	
-	@Select("select car_history_id, car_id,"
-			+ "	to_char(car_start_date, 'yyyy-mm-dd hh24:mi') sDay,"
-			+ "	to_char(car_end_date, 'yyyy-mm-dd hh24:mi') eDay "
+	@Select("select carHistoryId, carId,"
+			+ "	to_char(carStartDate, 'yyyy-mm-dd hh24:mi') carStartDate,"
+			+ "	to_char(carEndDate, 'yyyy-mm-dd hh24:mi') carEndDate "
 			+ "	from car_rental_history")
 	List<CarHis> rentCarList();
 	

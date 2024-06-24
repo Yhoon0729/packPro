@@ -11,7 +11,7 @@
 	<div class="container">
 		<h2>Rent Car Confirmation</h2>
 
-		<p>차량 시리얼 번호:${car_id}</p>
+		<p>차량 시리얼 번호:${carId}</p>
 
 		<p>대여 날짜:${sRentDate}</p>
 
@@ -21,7 +21,7 @@
 
 		<p>반납 시각:${eRentTime}</p>
 
-		<p>대여 시간:${tot_time}</p>
+		<p>대여 시간:${totTime}</p>
 
 		<p>시간당 가격:${hourFee}</p>
 

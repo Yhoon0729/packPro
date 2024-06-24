@@ -8,9 +8,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-    function updateAction(car_id) {
+    function updateAction(carId) {
         var form = document.getElementById('rentCarForm');
-        form.action = "/packagePro/car/rentCarTime?car_id=" + car_id;
+        form.action = "/packagePro/car/rentCarTime?carId=" + carId;
     }
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,13 +32,13 @@
 
 				<c:forEach var="c" items="${li}">
 					<tr>
-						<td><input type="radio" name="chk"  onchange="updateAction(${c.car_id})"></td>
-						<td>${c.car_id}</td>
-						<td>${c.car_nation}</td>
-						<td>${c.car_type}</td>
-						<td>${c.car_name}</td>
-						<td>${c.car_daily_fee}</td>
-						<td>${c.car_com}</td>
+						<td><input type="radio" name="chk"  onchange="updateAction(${c.carId})"></td>
+						<td>${c.carId}</td>
+						<td>${c.carNation}</td>
+						<td>${c.carType}</td>
+						<td>${c.carName}</td>
+						<td>${c.carDailyFee}</td>
+						<td>${c.carCom}</td>
 					</tr>
 				</c:forEach>
 			</table>

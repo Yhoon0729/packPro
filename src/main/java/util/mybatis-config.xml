@@ -60,5 +60,8 @@
 		
 		<!-- 예약 관련 매퍼 -->
 		<mapper class="mapper.BookingAnno" />
+		
+		<!-- 회원 관련 매퍼 -->
+		<mapper class="mapper.MemberAnno" />
 	</mappers>
 </configuration>

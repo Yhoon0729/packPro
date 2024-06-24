@@ -12,8 +12,8 @@
 	<div class="container">
 		<h2>Rent Car Time</h2>
 		<form id="rentCarTimeForm" action="rentCarInfo" method="post">
-			<input type="hidden" name="car_id" value="${car_id}" />
-			<p>선택된 차량 ID: ${car_id}</p>
+			<input type="hidden" name="carId" value="${carId}" />
+			<p>선택된 차량 ID: ${carId}</p>
 			<tr>
 				<td><label for="sRentDate">대여 날짜:</label>
 				<input type="date" id="sRentDate" name="sRentDate" required></td><br><br>

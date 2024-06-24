@@ -20,10 +20,10 @@
 
 			<c:forEach var="r" items="${li}">
 				<tr>
-					<td>${r.car_history_id}</td>
-					<td>${r.car_id}</td>
-					<td>${r.sDay}</td>
-					<td>${r.eDay}</td>
+					<td>${r.carHistoryId}</td>
+					<td>${r.carId}</td>
+					<td>${r.carStartDate}</td>
+					<td>${r.carEndDate}</td>
 				</tr>
 			</c:forEach>
 		</table>

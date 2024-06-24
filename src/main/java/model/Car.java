@@ -1,55 +1,53 @@
 package model;
 
 public class Car {
-	private int car_id;
-	private String car_nation;
-	private String car_type;
-	private String car_name;
-	private int car_daily_fee;
-	private String car_com;
+	private int carId;
+	private String carNation;
+	private String carType;
+	private String carName;
+	private int carDailyFee;
+	private String carCom;
 	
-	public int getCar_id() {
-		return car_id;
+	public int getCarId() {
+		return carId;
 	}
-	public void setCar_id(int car_id) {
-		this.car_id = car_id;
+	public void setCarId(int carId) {
+		this.carId = carId;
 	}
-	public String getCar_nation() {
-		return car_nation;
+	public String getCarNation() {
+		return carNation;
 	}
-	public void setCar_nation(String car_nation) {
-		this.car_nation = car_nation;
+	public void setCarNation(String carNation) {
+		this.carNation = carNation;
 	}
-	public String getCar_type() {
-		return car_type;
+	public String getCarType() {
+		return carType;
 	}
-	public void setCar_type(String car_type) {
-		this.car_type = car_type;
+	public void setCarType(String carType) {
+		this.carType = carType;
 	}
-	public String getCar_name() {
-		return car_name;
+	public String getCarName() {
+		return carName;
 	}
-	public void setCar_name(String car_name) {
-		this.car_name = car_name;
+	public void setCarName(String carName) {
+		this.carName = carName;
 	}
-	public int getCar_daily_fee() {
-		return car_daily_fee;
+	public int getCarDailyFee() {
+		return carDailyFee;
 	}
-	public void setCar_daily_fee(int car_daily_fee) {
-		this.car_daily_fee = car_daily_fee;
+	public void setCarDailyFee(int carDailyFee) {
+		this.carDailyFee = carDailyFee;
 	}
-	public String getCar_com() {
-		return car_com;
+	public String getCarCom() {
+		return carCom;
 	}
-	public void setCar_com(String car_com) {
-		this.car_com = car_com;
+	public void setCarCom(String carCom) {
+		this.carCom = carCom;
 	}
+	
 	@Override
 	public String toString() {
-		return "Car [car_id=" + car_id + ", car_nation=" + car_nation + ", car_type=" + car_type + ", car_name="
-				+ car_name + ", car_daily_fee=" + car_daily_fee + ", car_com=" + car_com + "]";
+		return "Car [carId=" + carId + ", carNation=" + carNation + ", carType=" + carType + ", carName=" + carName
+				+ ", carDailyFee=" + carDailyFee + ", carCom=" + carCom + "]";
 	}
-
-	
-	
 }

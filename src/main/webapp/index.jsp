@@ -8,5 +8,9 @@
 </head>
 <body>
 
-</body>
+	<h2><a href="member/join">회원가입</a></h2>
+	<h2><a href="tra/traindex">TravelMate Start</a></h2>
+	<h2><a href="tra/festivalList">Festival List Start</a></h2>	
+
+
 </html>

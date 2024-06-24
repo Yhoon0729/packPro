@@ -44,9 +44,9 @@ public class CarController extends MskimRequestMapping{
 	@RequestMapping("rentCarTime")
 	public String rentCarTime(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-        String car_id = request.getParameter("car_id");
-        System.out.println(car_id);
-        request.setAttribute("car_id", car_id);
+        String carId = request.getParameter("carId");
+        System.out.println(carId);
+        request.setAttribute("carId", carId);
         return "/view/car/rentCarTime.jsp";
 	}
 	
@@ -54,7 +54,7 @@ public class CarController extends MskimRequestMapping{
 	public String rentCarInfo(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-        int car_id = Integer.parseInt(request.getParameter("car_id"));
+        int carId = Integer.parseInt(request.getParameter("carId"));
         String sRentDate = request.getParameter("sRentDate");
         String sRentTime = request.getParameter("sRentTime");
         String eRentDate = request.getParameter("eRentDate");
@@ -63,38 +63,38 @@ public class CarController extends MskimRequestMapping{
         System.out.println("sRentTime = " + sRentTime);
         SimpleDateFormat obj = new SimpleDateFormat("yyyy-MM-dd HH:mm");  
         
-        Date sDay = null;
-        Date eDay = null;
-        long tot_time=0;
+        Date carStartDate = null;
+        Date carEndDate = null;
+        long totTime=0;
         try {
-			sDay = obj.parse(sRentDate+" "+sRentTime);
-			System.out.println("sDay = " + sDay);
-			eDay = obj.parse(eRentDate+" "+eRentTime);
-			System.out.println("eDay = " + eDay);
-			tot_time = (eDay.getTime() - sDay.getTime()) / (1000*60*60);
-			System.out.println("tot_time = " + tot_time);
+        	carStartDate = obj.parse(sRentDate+" "+sRentTime);
+			System.out.println("carStartDate = " + carStartDate);
+			carEndDate = obj.parse(eRentDate+" "+eRentTime);
+			System.out.println("carEndDate = " + carEndDate);
+			totTime = (carEndDate.getTime() - carStartDate.getTime()) / (1000*60*60);
+			System.out.println("totTime = " + totTime);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
   
-        System.out.println(car_id);
+        System.out.println(carId);
         
-        int hourFee = dao.fee(car_id);
-        int totFee = (int)(tot_time * hourFee);
-        int num = dao.carHis(car_id, totFee, sDay, eDay);
+        int hourFee = dao.fee(carId);
+        int totFee = (int)(totTime * hourFee);
+        int num = dao.carHis(carId, totFee, carStartDate, carEndDate);
         
-        CarHis carHis = dao.rent(car_id);
+        CarHis carHis = dao.rent(carId);
         session.setAttribute("carHis", carHis);
         System.out.println(session.getAttribute("carHis"));
 
-        request.setAttribute("car_id", car_id);
+        request.setAttribute("carId", carId);
         request.setAttribute("sRentDate", sRentDate);
         request.setAttribute("sRentTime", sRentTime);
         
         request.setAttribute("eRentDate", eRentDate);
         request.setAttribute("eRentTime", eRentTime);  
-        request.setAttribute("tot_time", tot_time);
+        request.setAttribute("totTime", totTime);
         request.setAttribute("hourFee", hourFee);
         request.setAttribute("totFee", totFee);
         

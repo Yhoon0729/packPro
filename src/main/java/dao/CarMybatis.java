@@ -26,12 +26,12 @@ public class CarMybatis {
 		return hourFee;
 	}
 	
-	public int carHis(int car_id, int totFee, Date sDay, Date eDay) {
+	public int carHis(int carId, int totFee, Date carStartDate, Date carEndDate) {
 		Map map = new HashMap();
-		map.put("car_id", car_id);
+		map.put("carId", carId);
 		map.put("totFee", totFee);
-		map.put("sDay", sDay);
-		map.put("eDay", eDay);
+		map.put("carStartDate", carStartDate);
+		map.put("carEndDate", carEndDate);
 		
 		int num = session.getMapper(RentAnno.class).carHis(map);
 		session.commit();

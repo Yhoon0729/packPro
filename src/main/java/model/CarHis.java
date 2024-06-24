@@ -1,23 +1,23 @@
 package model;
 
 public class CarHis {
-	private int car_history_id;
-	private int car_id;
+	private int carHistoryId;
+	private int carId;
 	private int totFee;
-	private String sDay;
-	private String eDay;
+	private String carStartDate;
+	private String carEndDate;
 	
-	public int getCar_history_id() {
-		return car_history_id;
+	public int getCarHistoryId() {
+		return carHistoryId;
 	}
-	public void setCar_history_id(int car_history_id) {
-		this.car_history_id = car_history_id;
+	public void setCarHistoryId(int carHistoryId) {
+		this.carHistoryId = carHistoryId;
 	}
-	public int getCar_id() {
-		return car_id;
+	public int getCarId() {
+		return carId;
 	}
-	public void setCar_id(int car_id) {
-		this.car_id = car_id;
+	public void setCarId(int carId) {
+		this.carId = carId;
 	}
 	public int getTotFee() {
 		return totFee;
@@ -25,23 +25,23 @@ public class CarHis {
 	public void setTotFee(int totFee) {
 		this.totFee = totFee;
 	}
-	public String getsDay() {
-		return sDay;
+	public String getCarStartDate() {
+		return carStartDate;
 	}
-	public void setsDay(String sDay) {
-		this.sDay = sDay;
+	public void setCarStartDate(String carStartDate) {
+		this.carStartDate = carStartDate;
 	}
-	public String geteDay() {
-		return eDay;
+	public String getCarEndDate() {
+		return carEndDate;
 	}
-	public void seteDay(String eDay) {
-		this.eDay = eDay;
+	public void setCarEndDate(String carEndDate) {
+		this.carEndDate = carEndDate;
 	}
-	
 	@Override
 	public String toString() {
-		return "CarHis [car_history_id=" + car_history_id + ", car_id=" + car_id + ", totFee=" + totFee + ", sDay="
-				+ sDay + ", eDay=" + eDay + "]";
+		return "CarHis [carHistoryId=" + carHistoryId + ", carId=" + carId + ", totFee=" + totFee + ", carStartDate="
+				+ carStartDate + ", carEndDate=" + carEndDate + "]";
 	}
-
+	
+	
 }
